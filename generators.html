@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+       position: fixed;
+       border-radius: 20px;
+       border: none;
+       color:white;
+       background-color: rgb(65, 65, 65);
+       width: 15%;
+       height: 7%;
+       font-size: 200%;
+       cursor: pointer;
+       font-family: monospace;
+      }
+
+      button:hover {
+        background-color: rgb(44, 44, 44);
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(42, 43, 48);">
+    <div style="visibility: visible;" id="mainmenu">
+      <h1 style="font-family:monospace;color: white;position: fixed;margin-left: 35%;margin-top:5%;font-size: 400%;">Roblox Generators</h1>
+
+      <button id="psg" style="right:43.5%;bottom:50%;cursor: not-allowed;">Password Generator</button>
+      <button id="ng" style="right:35%;bottom:60%;">Names Generator</button>
+      <button id="pcg" style="right:52%;bottom:60%;cursor: not-allowed;">PSX Code Generator</button>
+    </div>
+
+    <div id="psgm" style="visibility: hidden;">
+      <h1 style="font-family:monospace;color: white;position: fixed;margin-left: 65%;margin-top:3%;font-size: 400%;">Passwords:</h1>
+      <div id="psgt" style="position: fixed;width: 50%;height:100%;background-color: rgb(15, 15, 15);left: 0%;bottom: 0%;color:rgb(85, 255, 100);font-family:monospace;font-size: 200%;overflow:scroll;overflow-x:auto;overflow-y:scroll;">Password Generator v1</div>
+      <button id="startpsg" style="background-color: rgb(0, 211, 0);left:83%">Start [▶]</button>
+      <button class="home" style="background-color: rgb(0, 116, 211);left:83%;bottom: 2%;">🏠</button>
+      <input style="background-color: rgb(129, 129, 129);position: fixed;border:none;border-radius:7px;color: white;font-family:monospace;width: 15%;height: 7%;left:83%;bottom:85%;font-size:200%" type=“text”>
+    </div>
+
+    <div id="pcgm" style="visibility: hidden;">
+      <h1 style="font-family:monospace;color: white;position: fixed;margin-left: 65%;margin-top:3%;font-size: 400%;">PSX Codes:</h1>
+      <div id="pcgt" style="position: fixed;width: 50%;height:100%;background-color: rgb(15, 15, 15);left: 0%;bottom: 0%;color:rgb(85, 255, 100);font-family:monospace;font-size: 200%;overflow:scroll;overflow-x:auto;overflow-y:scroll;">Pet Simulator Code Generator v1</div>
+      <button id="startpcg" style="background-color: rgb(0, 211, 0);left:83%">Start [▶]</button>
+      <button class="home" style="background-color: rgb(0, 116, 211);left:83%;bottom: 2%;">🏠</button>
+    </div>
+
+    <div id="ngm" style="visibility: hidden;">
+      <h1 style="font-family:monospace;color: white;position: fixed;margin-left: 65%;margin-top:3%;font-size: 400%;">Available Names:</h1>
+      <div id="ngv" style="position: fixed;width: 50%;height:70%;left: 50%;bottom: 13%;color:rgb(255, 255, 255);font-family:monospace;font-size: 200%;overflow:scroll;overflow-x:auto;overflow-y:scroll;"><span style="color:gray">Available Names Will Pop Up Here</span></div>
+      <div id="ngt" style="position: fixed;width: 50%;height:100%;background-color: rgb(15, 15, 15);left: 0%;bottom: 0%;color:rgb(85, 255, 100);font-family:monospace;font-size: 200%;overflow:scroll;overflow-x:auto;overflow-y:scroll;">Roblox Names Generator v1</div>
+      <button id="startng" style="background-color: rgb(0, 211, 0);left:83%">Start [▶]</button>
+      <button class="home" style="background-color: rgb(0, 116, 211);left:83%;bottom: 2%;">🏠</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      function wait(milliseconds) {
+   return new Promise((resolve) => setTimeout(resolve, milliseconds));
+ }
+ $('.home').click(function() {
+   document.getElementById('mainmenu').style.visibility = "visible"
+   document.getElementById('psgm').style.visibility = "hidden"
+   document.getElementById('pcgm').style.visibility = "hidden"
+   document.getElementById('ngm').style.visibility = "hidden"
+});
+
+document.getElementById('psg').onclick = function() {
+    //document.getElementById('mainmenu').style.visibility = "hidden"
+    //document.getElementById('psgm').style.visibility = "visible"
+    //document.getElementById('pcgm').style.visibility = "hidden"
+    //document.getElementById('ngm').style.visibility = "hidden"
+ };
+ document.getElementById('ng').onclick = function() {
+    document.getElementById('mainmenu').style.visibility = "hidden"
+    document.getElementById('ngm').style.visibility = "visible"
+    document.getElementById('psgm').style.visibility = "hidden"
+    document.getElementById('pcgm').style.visibility = "hidden"
+ };
+ document.getElementById('pcg').onclick = function() {
+    //document.getElementById('mainmenu').style.visibility = "hidden"
+    //document.getElementById('pcgm').style.visibility = "visible"
+    //document.getElementById('psgm').style.visibility = "hidden"
+    //document.getElementById('ngm').style.visibility = "hidden"
+ };
+document.getElementById('startpsg').onclick = function() {
+   if (document.getElementById('startpsg').innerText == "Start [▶]") {
+      document.getElementById('startpsg').innerText = "Restart [🔁]"
+      document.getElementById('startpsg').style.backgroundColor = "rgb(0, 0, 255)";
+      document.getElementById('psgt').innerHTML = "Starting"
+      wait(1000).then(() => {
+         document.getElementById('psgt').innerHTML = "Starting."
+         wait(1000).then(() => {
+            document.getElementById('psgt').innerHTML = "Starting.."
+            wait(1000).then(() => {
+               document.getElementById('psgt').innerHTML = "Starting..."
+               wait(3000).then(() => {
+                  for(var i = 0; i < 1000; i++){
+                     wait(500*i).then(() => {
+                        var results = "";
+                        var lettersl = {
+                           0: "A",
+                           1: "B",
+                           2: "C",
+                           3: "D",
+                           4: "E",
+                           5: "F",
+                           6: "G",
+                           7: "H",
+                           8: "I",
+                           9: "J",
+                           10: "K",
+                           11: "L",
+                           12: "M",
+                           13: "N",
+                           14: "O",
+                           15: "P",
+                           16: "Q",
+                           17: "R",
+                           18: "S",
+                           19: "T",
+                           20: "U",
+                           21: "V",
+                           22: "W",
+                           23: "X",
+                           24: "Y",
+                           25: "Z"
+                        }
+                        var letters = (Math.random() * 7);
+                        var numbers = (Math.random() * 7);
+                        for(var ii = 0; ii < letters+numbers; ii++){
+                           if (Math.floor(Math.random() * 2) == 0) {
+                              results = results + lettersl[Math.floor(Math.random() * 26)]
+                           }
+                           else {
+                              results = results + Math.floor(Math.random() * 11)
+                           }
+                        }
+                        document.getElementById('psgt').innerHTML = document.getElementById('psgt').innerHTML + "<br>" + results + " | <span style='color:red'>Invalid</span>" 
+                     });
+
+                  }
+                  wait(500*1000).then(() => {
+                     document.getElementById('psgt').innerHTML = document.getElementById('psgt').innerHTML + "<br>Generated 1000"
+                     document.getElementById('startpsg').innerText = "Start [▶]"
+                     document.getElementById('startpsg').style.backgroundColor = "rgb(85, 255, 100)";
+                  });
+                });
+             });
+          });
+       });
+   }
+   else {
+      document.getElementById('startpsg').innerText = "Restart [🔁]"
+      document.getElementById('startpsg').style.backgroundColor = "rgb(0, 0, 255)";
+      document.getElementById('psgt').innerHTML = "Restarting..."
+   }
+};
+
+
+document.getElementById('startpcg').onclick = function() {
+   if (document.getElementById('startpcg').innerText == "Start [▶]") {
+      document.getElementById('startpcg').innerText = "Restart [🔁]"
+      document.getElementById('startpcg').style.backgroundColor = "rgb(0, 0, 255)";
+      document.getElementById('pcgt').innerHTML = "Starting"
+      wait(1000).then(() => {
+         document.getElementById('pcgt').innerHTML = "Starting."
+         wait(1000).then(() => {
+            document.getElementById('pcgt').innerHTML = "Starting.."
+            wait(1000).then(() => {
+               document.getElementById('pcgt').innerHTML = "Starting..."
+               wait(3000).then(() => {
+                  for(var i = 0; i < 1000; i++){
+                     wait(500*i).then(() => {
+                        var results = "";
+                        var lettersl = {
+                           0: "A",
+                           1: "B",
+                           2: "C",
+                           3: "D",
+                           4: "E",
+                           5: "F",
+                           6: "G",
+                           7: "H",
+                           8: "I",
+                           9: "J",
+                           10: "K",
+                           11: "L",
+                           12: "M",
+                           13: "N",
+                           14: "O",
+                           15: "P",
+                           16: "Q",
+                           17: "R",
+                           18: "S",
+                           19: "T",
+                           20: "U",
+                           21: "V",
+                           22: "W",
+                           23: "X",
+                           24: "Y",
+                           25: "Z"
+                        }
+                        var letters = 6;
+                        var numbers = 6;
+                        for(var ii = 0; ii < letters+numbers; ii++){
+                           if (Math.floor(Math.random() * 2) == 0) {
+                              results = results + lettersl[Math.floor(Math.random() * 26)]
+                           }
+                           else {
+                              results = results + Math.floor(Math.random() * 11)
+                           }
+                        }
+                        document.getElementById('pcgt').innerHTML = document.getElementById('pcgt').innerHTML + "<br>" + results + " | <span style='color:red'>Invalid</span>" 
+                     });
+
+                  }
+                  wait(500*1000).then(() => {
+                     document.getElementById('pcgt').innerHTML = document.getElementById('pcgt').innerHTML + "<br>Generated 1000"
+                     document.getElementById('startpcg').innerText = "Start [▶]"
+                     document.getElementById('startpcg').style.backgroundColor = "rgb(85, 255, 100)";
+                  });
+                });
+             });
+          });
+       });
+   }
+   else {
+      document.getElementById('startpcg').innerText = "Restart [🔁]"
+      document.getElementById('startpcg').style.backgroundColor = "rgb(0, 0, 255)";
+      document.getElementById('pcgt').innerHTML = "Restarting..."
+   }
+};
+
+document.getElementById('startng').onclick = function() {
+   if (document.getElementById('startng').innerText == "Start [▶]") {
+      document.getElementById('startng').innerText = "Restart [🔁]"
+      document.getElementById('startng').style.backgroundColor = "rgb(0, 0, 255)";
+      document.getElementById('ngt').innerHTML = "Starting"
+      wait(1000).then(() => {
+         document.getElementById('ngt').innerHTML = "Starting."
+         wait(1000).then(() => {
+            document.getElementById('ngt').innerHTML = "Starting.."
+            wait(1000).then(() => {
+               document.getElementById('ngt').innerHTML = "Starting..."
+               wait(3000).then(() => {
+                  for(var i = 0; i < 10000; i++){
+                     wait(500*i).then(() => {
+                        var results = "";
+                        var lettersl = {
+                           0: "A",
+                           1: "B",
+                           2: "C",
+                           3: "D",
+                           4: "E",
+                           5: "F",
+                           6: "G",
+                           7: "H",
+                           8: "I",
+                           9: "J",
+                           10: "K",
+                           11: "L",
+                           12: "M",
+                           13: "N",
+                           14: "O",
+                           15: "P",
+                           16: "Q",
+                           17: "R",
+                           18: "S",
+                           19: "T",
+                           20: "U",
+                           21: "V",
+                           22: "W",
+                           23: "X",
+                           24: "Y",
+                           25: "Z"
+                        }
+                        var letters = 4;
+                        var numbers = 0;
+                        for(var ii = 0; ii < letters+numbers; ii++){
+                           if (Math.floor(Math.random() * 2) == 0) {
+                              results = results + lettersl[Math.floor(Math.random() * 26)]
+                           }
+                           else {
+                              results = results + Math.floor(Math.random() * 11)
+                           }
+                        }
+
+                        $.ajax({
+                           type: "GET",
+                           url: "http://localhost:8080/https://www.roblox.com/search/users/results?keyword=" + results + "&maxRows=12&startIndex=0",
+                           success: function (result) {
+                              console.log(result)
+                             if (result["UserSearchResults"] == null) {
+                              if (result["Keyword"].includes("#")) {
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:white'>Not Work</span>"
+                              }
+                              else {
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:blue'>Available</span>"
+                              }
+                             }
+                             else {
+                              var thingfound = false
+                              // console.log(result["UserSearchResults"])
+                              // console.log(array.length(result["UserSearchResults"]))
+                              for (var iii = 0; iii < result["UserSearchResults"].length; iii++) {
+                                 console.log(result["UserSearchResults"][iii])
+                                 if (result["UserSearchResults"][iii]["Name"].toLowerCase() == results.toLowerCase()) {
+                                    thingfound = true
+                                 }
+                              }
+                              if (thingfound == true) {
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Taken</span>"
+                              }
+                              else {
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:blue'>Available</span>"
+                                 document.getElementById('ngv').innerHTML = document.getElementById('ngv').innerHTML + "<br>Username: " + results
+                              }
+                             }
+                           },
+                         });
+                     });
+
+                  }
+                  wait(500*1000).then(() => {
+                     document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>Generated 1000"
+                     document.getElementById('startng').innerText = "Start [▶]"
+                     document.getElementById('startng').style.backgroundColor = "rgb(85, 255, 100)";
+                  });
+                });
+             });
+          });
+       });
+   }
+   else {
+      document.getElementById('startng').innerText = "Restart [🔁]"
+      document.getElementById('startng').style.backgroundColor = "rgb(0, 0, 255)";
+      document.getElementById('ngt').innerHTML = "Restarting..."
+   }
+};
+    </script>
+  </body>
+</html>
