@@ -301,15 +301,15 @@
                             const jsonData = await response.json();
                             if (jsonData["data"].length == 0) {
                               if (results.search("69")) {
-                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Censored</span>"
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Censored</span> | " + i
                               }
                               else {
-                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:blue'>Available</span>"
-                                document.getElementById('ngv').innerHTML = document.getElementById('ngv').innerHTML + "<br>Username: " + results
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:blue'>Available</span> | " + i
+                                document.getElementById('ngv').innerHTML = document.getElementById('ngv').innerHTML + "<br>Username: " + results + " | " + i
                               }
                             }
                             else {
-                                document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Taken</span>"
+                                document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Taken</span> | " + i
                             }
                           }
                           logJSONData()
