@@ -300,8 +300,13 @@
                             });
                             const jsonData = await response.json();
                             if (jsonData["data"].length == 0) {
-                                document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:blue'>Available</span>"
+                              if (results.search("69")) {
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Censored</span>"
+                              }
+                              else {
+                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:blue'>Available</span>"
                                 document.getElementById('ngv').innerHTML = document.getElementById('ngv').innerHTML + "<br>Username: " + results
+                              }
                             }
                             else {
                                 document.getElementById('ngt').innerHTML = document.getElementById('ngt').innerHTML + "<br>" + results + " | <span style='color:red'>Taken</span>"
